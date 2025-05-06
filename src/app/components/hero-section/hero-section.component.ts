@@ -43,7 +43,7 @@ import { CommonModule } from '@angular/common';
       height: 100vh;
       min-height: 600px;
       /* ... background-image: url('https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');*/
-      background-image: url('assets/images/backgr.jpeg');
+      background-image: url('/assets/images/backgr.jpeg');
       background-size: cover;
       background-position: center;
       color: white;
