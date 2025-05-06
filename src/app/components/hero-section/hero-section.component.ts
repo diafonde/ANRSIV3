@@ -7,33 +7,34 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="hero-section">
+    <section class="hero-section" [ngStyle]="{'background-image': 'url(assets/images/backgr.jpeg)'}">
       <div class="hero-content">
         
+      
 
         <h1 class="slide-up">Technologies et de l'innovation<br></h1>
-        <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie .</p>
+        <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p>
         <div class="hero-buttons slide-up">
-          <a href="#featured" class="btn btn-primary">Explore Research</a>
-          <a href="#newsletter" class="btn btn-secondary">Subscribe</a>
+          <a href="#featured" class="btn btn-primary">Explorer la recherche</a>
+          <a href="#newsletter" class="btn btn-secondary">S'abonner</a>
         </div>
       </div>
       <div class="hero-statistics slide-up">
         <div class="stat-item">
           <div class="stat-number">500+</div>
-          <div class="stat-label">Research Projects</div>
+          <div class="stat-label">Projets de recherche</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">50+</div>
-          <div class="stat-label">Partner Institutions</div>
+          <div class="stat-label">Institutions partenaires</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">2000+</div>
-          <div class="stat-label">Published Papers</div>
+          <div class="stat-label">Articles publiés</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">$250M</div>
-          <div class="stat-label">Research Funding</div>
+          <div class="stat-number">250M $</div>
+          <div class="stat-label">Financement de la recherche</div>
         </div>
       </div>
       <div class="hero-overlay"></div>
@@ -45,7 +46,7 @@ import { CommonModule } from '@angular/common';
       height: 100vh;
       min-height: 600px;
       /* ... background-image: url('https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');*/
-      /*background-image: url('assets/images/backgr.jpeg');*/
+      /* background-image: url('assets/images/backgr.jpeg'); */
       background-size: cover;
       background-position: center;
       color: white;

@@ -22,7 +22,7 @@ export class ArticleService {
       author: 'Dr. Sarah Chen',
       publicationDate: new Date('2025-03-15'),
       category: 'Quantum Physics',
-      imageUrl: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageUrl: 'assets/images/directeur.jpeg',
       featured: true,
       tags: ['Quantum Computing', 'Physics', 'Technology']
     },
@@ -40,7 +40,7 @@ export class ArticleService {
       author: 'Dr. Miguel Rodriguez',
       publicationDate: new Date('2025-02-28'),
       category: 'Environmental Science',
-      imageUrl: 'https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageUrl: 'assets/images/france.jpeg',
       featured: true,
       tags: ['Environment', 'Materials Science', 'Sustainability']
     },
@@ -60,7 +60,7 @@ export class ArticleService {
       author: 'Dr. Emma Wilson',
       publicationDate: new Date('2025-02-10'),
       category: 'Artificial Intelligence',
-      imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageUrl: 'assets/images/reu.jpeg',
       featured: false,
       tags: ['AI', 'Biotechnology', 'Medicine']
     },
@@ -80,7 +80,7 @@ export class ArticleService {
       author: 'Dr. James Park',
       publicationDate: new Date('2025-01-25'),
       category: 'Renewable Energy',
-      imageUrl: 'https://images.pexels.com/photos/159397/solar-panel-array-power-sun-electricity-159397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageUrl: 'assets/images/chef.jpeg',
       featured: true,
       tags: ['Solar Energy', 'Engineering', 'Climate']
     },

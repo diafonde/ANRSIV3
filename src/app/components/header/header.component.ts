@@ -19,9 +19,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         
         <nav class="main-nav" [class.active]="mobileMenuOpen">
           <ul>
-            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-            <li><a routerLink="/categories" routerLinkActive="active">Research Fields</a></li>
-            <li><a routerLink="/about" routerLinkActive="active">About Agency</a></li>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
+            <li><a routerLink="/categories" routerLinkActive="active">Domaine de recherche</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">A Propos</a></li>
             <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
           </ul>
         </nav>
