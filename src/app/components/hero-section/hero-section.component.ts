@@ -9,7 +9,9 @@ import { CommonModule } from '@angular/common';
   template: `
     <section class="hero-section">
       <div class="hero-content">
-        
+      <div
+      [style.backgroundImage]="'url(' + imageUrl + ')'"
+    ></div>
         <h1 class="slide-up">Technologies et de l’innovation<br></h1>
         <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie .</p>
         <div class="hero-buttons slide-up">
@@ -173,4 +175,6 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class HeroSectionComponent {}
+export class HeroSectionComponent {
+  imageUrl = 'assets/images/backgr.jpeg';
+}
