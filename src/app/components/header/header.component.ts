@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <header [class.scrolled]="scrolled" [class.mobile-open]="mobileMenuOpen">
       <div class="container header-container">
         <div class="logo">
-          <img src="/assets/images/logos.png" alt="ANRSI Logo" class="logo-image">
+          <img src="assets/images/logos.png" alt="ANRSI Logo" class="logo-image">
           <a routerLink="/">
             <!-- <span class="logo-text">ANRSI</span> -->
           </a>
