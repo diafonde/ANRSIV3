@@ -28,15 +28,13 @@ export class ArticleService {
     },
     {
       id: '2',
-      title: 'New Biodegradable Plastic Alternative Developed',
+      title: 'Programme Commun de Mobilité Recherche PCMR (Listes des lauréats)',
       summary: 'Researchers have created a fully biodegradable plastic alternative from agricultural waste that breaks down in weeks.',
-      content: `A team of environmental scientists and material engineers has developed a promising new plastic alternative made entirely from agricultural waste products. The material, named "EcoPolymer," possesses strength and flexibility comparable to conventional plastics but can biodegrade completely within 6-8 weeks in standard composting conditions.
+      content: `Programme Commun de Mobilité Recherche PCMR (Listes des lauréats)
 
-      "We wanted to address the growing plastic pollution crisis by creating a truly sustainable alternative," explained Dr. Miguel Rodriguez, who led the research team. "Unlike many 'biodegradable' plastics that still leave microplastic residues, EcoPolymer breaks down completely into non-toxic compounds that can actually enrich soil."
-      
-      The innovation utilizes cellulose fibers from crop residues combined with a binding agent derived from food processing byproducts. This approach not only creates a useful material but also finds purpose for agricultural waste that would otherwise be burned or discarded.
-      
-      Initial testing shows the material is suitable for food packaging, disposable utensils, and various consumer goods. The team is now working with industry partners to scale up production and bring EcoPolymer products to market within two years.`,
+La commission mixte pour la sélection des bourses du gouvernement mauritanien et français s’est réunie ce jour à l’Agence nationale de la Recherche scientifique et de l’Innovation (ANSRI).
+
+Ci-dessous la liste des lauréats du Programme Commun de Mobilité Recherche (PCMR) pour l’année 2025.`,
       author: 'Dr. Miguel Rodriguez',
       publicationDate: new Date('2025-02-28'),
       category: 'Environmental Science',
