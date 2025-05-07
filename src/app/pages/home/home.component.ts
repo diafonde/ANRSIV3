@@ -70,24 +70,6 @@ import { Article } from '../../models/article.model';
       </div>
     </section>
     
-    <section id="newsletter" class="section newsletter-section">
-      <div class="container">
-        <div class="newsletter-content">
-          <h2>Stay Updated with Research Breakthroughs</h2>
-          <p>Subscribe to our newsletter to receive the latest updates on scientific discoveries, research opportunities, and upcoming events.</p>
-          <form class="newsletter-form">
-            <div class="form-group">
-              <input type="email" placeholder="Your email address" required>
-              <button type="submit" class="btn btn-accent">Subscribe</button>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="consent" required>
-              <label for="consent">I agree to receive updates from ScienceNOVA</label>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
   `,
   styles: [`
     .featured-section {

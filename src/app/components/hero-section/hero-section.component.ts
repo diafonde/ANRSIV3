@@ -7,13 +7,16 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
+  
     <section class="hero-section" [ngStyle]="{'background-image': 'url(assets/images/backgr.jpeg)'}">
+      
       <div class="hero-content">
-        
+      <h2 class="no-wrap">Agence Nationale de la Recherche de Technologies et de l'innovation<br></h2>
       
 
-        <h1 class="slide-up">Technologies et de l'innovation<br></h1>
-        <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p>
+      <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p>
+        
+        
         <div class="hero-buttons slide-up">
           <a href="#featured" class="btn btn-primary">Explorer la recherche</a>
           <a href="#newsletter" class="btn btn-secondary">S'abonner</a>
@@ -36,7 +39,9 @@ import { CommonModule } from '@angular/common';
           <div class="stat-number">250M $</div>
           <div class="stat-label">Financement de la recherche</div>
         </div>
+        
       </div>
+      
       <div class="hero-overlay"></div>
     </section>
   `,
@@ -53,6 +58,13 @@ import { CommonModule } from '@angular/common';
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    .no-wrap {
+      font-size: 3.0rem;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+   
     }
     
     .hero-overlay {

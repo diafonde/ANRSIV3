@@ -23,6 +23,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             <li><a routerLink="/categories" routerLinkActive="active">Domaine de recherche</a></li>
             <li><a routerLink="/about" routerLinkActive="active">A Propos</a></li>
             <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            <li><a routerLink="/videos" routerLinkActive="active">Mediatique</a></li>
           </ul>
         </nav>
         
@@ -104,6 +105,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       display: flex;
       list-style: none;
       gap: var(--space-6);
+      position: relative;
     }
     
     .main-nav a {
@@ -223,6 +225,45 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       header.mobile-open {
         background: var(--primary-900);
       }
+    }
+    
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--primary-900);
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10;
+      flex-direction: column;
+      padding: var(--space-2) 0;
+    }
+    
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: flex;
+    }
+    
+    .dropdown-menu li {
+      width: 100%;
+    }
+    
+    .dropdown-menu a {
+      color: white;
+      padding: var(--space-2) var(--space-4);
+      display: block;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    
+    .dropdown-menu a:hover {
+      background: var(--secondary-300);
+      color: var(--primary-900);
     }
   `]
 })

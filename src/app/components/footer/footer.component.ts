@@ -11,8 +11,8 @@ import { RouterLink } from '@angular/router';
       <div class="container">
         <div class="footer-grid">
           <div class="footer-column">
-            <h3 class="footer-title">ScienceNOVA</h3>
-            <p>National Agency for Scientific Research and Innovation - advancing knowledge, driving progress.</p>
+            <h3 class="footer-title">ANRSI</h3>
+            <p>Agence nationale de la recherche scientifique et de l'innovation - Faire progresser la connaissance.</p>
             <div class="social-icons">
               <a href="#" aria-label="Twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -72,7 +72,7 @@ import { RouterLink } from '@angular/router';
         </div>
         
         <div class="footer-bottom">
-          <p>&copy; {{ currentYear }} ScienceNOVA - National Agency for Scientific Research and Innovation. All rights reserved.</p>
+          <p>&copy; {{ currentYear }} ANRSI. All rights reserved.</p>
           <div class="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Use</a>
