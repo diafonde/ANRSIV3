@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SafePipe } from './safe.pipe';
 
 @Component({
   selector: 'app-videos',
   standalone: true,
+  imports: [CommonModule, SafePipe],
   template: `
+  
     <div class="contact-hero">
       <div class="container">
         <h1>Mediatique</h1>
@@ -13,55 +17,40 @@ import { Component } from '@angular/core';
     </div>
     
     <div class="container">
-     
       
-      <section class="section departments-section">
-        <h2 class="section-title">Departments</h2>
-        <div class="grid grid-3">
-          <div class="department-card">
-            <h3>Research & Development</h3>
-            <p>Contact our R&D department for inquiries about ongoing research projects, methodologies, and findings.</p>
-            <p><strong>Email:</strong> <a href="mailto:research&#64;sciencenova.org">research&#64;sciencenova.org</a></p>
-            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-          </div>
-          
-          <div class="department-card">
-            <h3>Partnerships & Collaborations</h3>
-            <p>For institutional partnerships, research collaborations, and joint venture opportunities.</p>
-            <p><strong>Email:</strong> <a href="mailto:partnerships&#64;sciencenova.org">partnerships&#64;sciencenova.org</a></p>
-            <p><strong>Phone:</strong> +1 (555) 123-8901</p>
-          </div>
-          
-          <div class="department-card">
-            <h3>Media & Public Relations</h3>
-            <p>For press inquiries, interview requests, and media resources.</p>
-            <p><strong>Email:</strong> <a href="mailto:media&#64;sciencenova.org">media&#64;sciencenova.org</a></p>
-            <p><strong>Phone:</strong> +1 (555) 123-6789</p>
-          </div>
-          
-          <div class="department-card">
-            <h3>Funding & Grants</h3>
-            <p>Information about research grants, funding opportunities, and application processes.</p>
-            <p><strong>Email:</strong> <a href="mailto:grants&#64;sciencenova.org">grants&#64;sciencenova.org</a></p>
-            <p><strong>Phone:</strong> +1 (555) 123-3456</p>
-          </div>
-          
-          <div class="department-card">
-            <h3>Education & Outreach</h3>
-            <p>For educational programs, workshops, and public engagement initiatives.</p>
-            <p><strong>Email:</strong> <a href="mailto:education&#64;sciencenova.org">education&#64;sciencenova.org</a></p>
-            <p><strong>Phone:</strong> +1 (555) 123-2345</p>
-          </div>
-          
-          <div class="department-card">
-            <h3>Human Resources</h3>
-            <p>For job opportunities, internships, and career-related inquiries.</p>
-            <p><strong>Email:</strong> <a href="mailto:careers&#64;sciencenova.org">careers&#64;sciencenova.org</a></p>
-            <p><strong>Phone:</strong> +1 (555) 123-5678</p>
+<!-- Container for the image gallery -->
+    <div class="media-sections">
+      <section class="media-block">
+        <h2 class="media-title">Vidéos</h2>
+        <div class="media-grid">
+          <div class="media-card" *ngFor="let video of videos">
+            <div class="media-thumb">
+              <iframe
+                [src]="video.url | safe"
+                frameborder="0"
+                allowfullscreen
+                title="{{ video.title }}">
+              </iframe>
+            </div>
+            <div class="media-caption">{{ video.title }}</div>
           </div>
         </div>
       </section>
-      
+
+      <section class="media-block">
+        <h2 class="media-title">Photos</h2>
+        <div class="media-grid">
+          <div class="media-card" *ngFor="let photo of photos">
+            <div class="media-thumb">
+              <img [src]="photo.url" [alt]="photo.title" />
+            </div>
+            <div class="media-caption">{{ photo.title }}</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+ 
      
     </div>
   `,
@@ -315,6 +304,76 @@ import { Component } from '@angular/core';
     .faq-answer p {
       color: var(--neutral-600);
     }
+
+    .media-sections {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+    }
+    .media-block {
+      margin-bottom: 3rem;
+    }
+    .media-title {
+      font-size: 2rem;
+      color: #1976d2;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .media-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+    }
+    .media-card:hover {
+      box-shadow: 0 6px 24px rgba(25, 118, 210, 0.12);
+    }
+    .media-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .media-thumb img, .media-thumb iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      border-radius: 0;
+    }
+    .media-caption {
+      padding: 1rem;
+      font-weight: 500;
+      text-align: center;
+      color: #333;
+    }
+ 
   `]
 })
-export class VideosComponent {} 
+export class VideosComponent {
+  selectedIndex = 0;
+  videos = [
+    { title: "Présentation de l'Agence", url: "https://www.youtube.com/embed/EMgwHc1F5W8", type: "youtube" },
+    { title: "Recherche Scientifique", url: "https://www.youtube.com/embed/jNQXAC9IVRw", type: "youtube" },
+    { title: "Nouvelles Technologies", url: "https://youtube.com/embed/4PupAG-vJnk", type: "youtube" }
+    // Add more videos as needed
+  ];
+  photos = [
+    { title: "Conférence annuelle", url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", type: "photo" },
+    { title: "Laboratoire de recherche", url: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80", type: "photo" },
+    { title: "Innovation technologique", url: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", type: "photo" },
+    
+    // Add more photos as needed
+  ];
+}

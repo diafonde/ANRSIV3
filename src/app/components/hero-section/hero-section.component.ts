@@ -9,12 +9,12 @@ import { CommonModule } from '@angular/common';
   template: `
   
     <section class="hero-section" [ngStyle]="{'background-image': 'url(assets/images/backgr.jpeg)'}">
-      
+    
       <div class="hero-content">
-      <h2 class="no-wrap">Agence Nationale de la Recherche de Technologies et de l'innovation<br></h2>
-      
+      <h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: white;" class="no-wap">Agence Nationale de la Recherche de Technologies et de l'innovation</h1>  
+      <br><br><br><br><br><br><br>
 
-      <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p>
+      <!-- <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p> -->
         
         
         <div class="hero-buttons slide-up">
@@ -36,7 +36,7 @@ import { CommonModule } from '@angular/common';
           <div class="stat-label">Articles publiés</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">250M $</div>
+          <div class="stat-number">250M MRU</div>
           <div class="stat-label">Financement de la recherche</div>
         </div>
         

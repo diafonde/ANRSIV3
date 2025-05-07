@@ -1,11 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, TranslateModule],
   template: `
     <header [class.scrolled]="scrolled" [class.mobile-open]="mobileMenuOpen">
       <div class="container header-container">
@@ -19,11 +20,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         
         <nav class="main-nav" [class.active]="mobileMenuOpen">
           <ul>
-            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
-            <li><a routerLink="/categories" routerLinkActive="active">Domaine de recherche</a></li>
-            <li><a routerLink="/about" routerLinkActive="active">A Propos</a></li>
-            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-            <li><a routerLink="/videos" routerLinkActive="active">Mediatique</a></li>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'Accueil' | translate }}</a></li>
+            <li><a routerLink="/categories" routerLinkActive="active">{{ 'Domaine de recherche' | translate }}</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">{{ 'A Propos' | translate }}</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">{{ 'Contact' | translate }}</a></li>
+            <li><a routerLink="/videos" routerLinkActive="active">{{ 'Mediatique' | translate }}</a></li>
           </ul>
         </nav>
         
@@ -36,10 +37,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           </button>
           
           <button class="language-btn" aria-label="Change Language">
-            <span>EN</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
+            <div class="language-dropdown">
+              <button class="primary-btn" (click)="toggleLanguage()">{{ currentLang }}</button>
+            </div>
           </button>
           
           <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Menu">
@@ -265,11 +265,30 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       background: var(--secondary-300);
       color: var(--primary-900);
     }
+    
+    .language-dropdown button {
+      padding: 0.5rem 1.2rem;
+      border: none;
+      background: #1976d2;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    
+    .language-dropdown button:hover {
+      background: #125ea2;
+    }
   `]
 })
 export class HeaderComponent {
   scrolled = false;
   mobileMenuOpen = false;
+  currentLang = 'fr';
+
+  constructor(public translate: TranslateService) {}
 
   @HostListener('window:scroll')
   onWindowScroll() {
@@ -278,5 +297,11 @@ export class HeaderComponent {
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  toggleLanguage() {
+    this.currentLang = this.currentLang === 'fr' ? 'ar' : 'fr';
+    this.translate.use(this.currentLang);
+    document.body.dir = this.currentLang === 'ar' ? 'rtl' : 'ltr';
   }
 }

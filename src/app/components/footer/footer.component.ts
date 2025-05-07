@@ -41,32 +41,23 @@ import { RouterLink } from '@angular/router';
           </div>
           
           <div class="footer-column">
-            <h4>Quick Links</h4>
+            <h4>Liens Rapides</h4>
             <ul class="footer-links">
-              <li><a routerLink="/">Home</a></li>
-              <li><a routerLink="/categories">Research Fields</a></li>
-              <li><a routerLink="/about">About Agency</a></li>
+              <li><a routerLink="/">Acceuil</a></li>
+              <li><a routerLink="/categories">Recherche</a></li>
+              <li><a routerLink="/about">A Propos</a></li>
               <li><a routerLink="/contact">Contact</a></li>
             </ul>
           </div>
           
-          <div class="footer-column">
-            <h4>Research Areas</h4>
-            <ul class="footer-links">
-              <li><a href="#">Quantum Physics</a></li>
-              <li><a href="#">Environmental Science</a></li>
-              <li><a href="#">Medical Research</a></li>
-              <li><a href="#">Artificial Intelligence</a></li>
-              <li><a href="#">Astronomy</a></li>
-            </ul>
-          </div>
+      
           
           <div class="footer-column">
             <h4>Newsletter</h4>
-            <p>Subscribe to our newsletter for the latest research updates.</p>
+            <p>S'abonner à notre newsletter pour les dernières mises à jour de la recherche.</p>
             <form class="newsletter-form">
               <input type="email" placeholder="Your email address" required>
-              <button type="submit" class="btn btn-accent">Subscribe</button>
+              <button type="submit" class="btn btn-accent">S'inscrire</button>
             </form>
           </div>
         </div>

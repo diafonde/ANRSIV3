@@ -70,6 +70,18 @@ import { Article } from '../../models/article.model';
       </div>
     </section>
     
+    <section class="section partners-section">
+      <div class="container">
+        <h2 class="section-title">Nos Partenaires</h2>
+        <div class="partners-grid">
+          <div class="partner-card" *ngFor="let partner of partners">
+            <img [src]="partner.logo" [alt]="partner.name" class="partner-logo">
+            <div class="partner-name">{{ partner.name }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
   `,
   styles: [`
     .featured-section {
@@ -295,6 +307,43 @@ import { Article } from '../../models/article.model';
         flex-direction: column;
       }
     }
+    
+    .partners-section {
+      background: var(--neutral-100);
+      padding: var(--space-8) 0;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-6);
+      align-items: center;
+      justify-items: center;
+      margin-top: var(--space-6);
+    }
+    .partner-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+    }
+    .partner-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    }
+    .partner-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: var(--space-2);
+    }
+    .partner-name {
+      font-weight: 500;
+      text-align: center;
+      color: var(--primary-900);
+    }
   `]
 })
 export class HomeComponent implements OnInit {
@@ -345,6 +394,13 @@ export class HomeComponent implements OnInit {
       title: 'Genomic Medicine Program',
       description: 'Initiation of the precision medicine initiative for personalized healthcare.'
     }
+  ];
+
+  partners = [
+    { name: 'Mauritanie', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Mauritania.svg' },
+    { name: 'France', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg' },
+    { name: 'Japon', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg' },
+    { name: 'Senegal', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg' },
   ];
 
   constructor(private articleService: ArticleService) {}
