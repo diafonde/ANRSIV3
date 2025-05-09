@@ -75,7 +75,7 @@ import { RouterLink } from '@angular/router';
   `,
   styles: [`
     footer {
-      background-color: var(--primary-900);
+      background-color: #083515;
       color: var(--neutral-300);
       padding: var(--space-12) 0 var(--space-4) 0;
     }

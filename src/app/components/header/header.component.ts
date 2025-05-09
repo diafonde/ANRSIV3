@@ -59,13 +59,13 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
       width: 100%;
       background: transparent;
       padding: var(--space-6) 0;
-      min-height: 90px;
+      max-height: 140px;
       z-index: 1000;
       transition: all 0.3s ease-in-out;
     }
     
     header.scrolled {
-      background: var(--primary-900);
+      background: #083515;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       padding: var(--space-4) 0;
     }

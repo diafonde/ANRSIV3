@@ -7,7 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import * as AOS from 'aos';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -70,5 +70,12 @@ export class App {
   switchLang(lang: string) {
     this.translate.use(lang);
     document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+
+  ngOnInit() {
+    AOS.init({
+      duration: 3000,
+      once: false, // animation occurs only once
+    });
   }
 }

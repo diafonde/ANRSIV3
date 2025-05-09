@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -18,8 +18,8 @@ import { CommonModule } from '@angular/common';
         
         
         <div class="hero-buttons slide-up">
-          <a href="#featured" class="btn btn-primary">Explorer la recherche</a>
-          <a href="#newsletter" class="btn btn-secondary">S'abonner</a>
+          <a (click)="scrollToSection('slideshow-section')" class="btn btn-primary">Voir le slideshow</a>
+          <a (click)="scrollToSection('featured')" class="btn btn-secondary">Explorer la recherche</a>
         </div>
       </div>
       <div class="hero-statistics slide-up">
@@ -43,6 +43,17 @@ import { CommonModule } from '@angular/common';
       </div>
       
       <div class="hero-overlay"></div>
+    </section>
+    <section class="slideshow-section">
+      <div class="slideshow-container">
+        <button class="slide-nav prev" (click)="prevSlide()">&#10094;</button>
+        <img [src]="slides[currentSlide].url" [alt]="slides[currentSlide].caption" class="slide-image">
+        <button class="slide-nav next" (click)="nextSlide()">&#10095;</button>
+      </div>
+      <div class="slide-caption">{{ slides[currentSlide].caption }}</div>
+      <div class="slide-dots">
+        <span *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlide" (click)="goToSlide(i)"></span>
+      </div>
     </section>
   `,
   styles: [`
@@ -185,8 +196,104 @@ import { CommonModule } from '@angular/common';
     .hero-statistics {
       animation-delay: 0.8s;
     }
+    .slideshow-section {
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      position: relative;
+      background: #f8f9fa;
+      padding: 2rem 0 3rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100vw;
+      max-width: 100vw;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide-image {
+      width: 100vw;
+      max-width: 100vw;
+      max-height: 550px;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .slide-nav {
+      background: rgba(25, 118, 210, 0.7);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .slide-nav.prev { left: 10px; }
+    .slide-nav.next { right: 10px; }
+    .slide-nav:hover { background: #1976d2; }
+    .slide-caption {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #333;
+      text-align: center;
+    }
+    .slide-dots {
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #1976d2;
+    }
   `]
 })
-export class HeroSectionComponent {
+export class HeroSectionComponent implements OnInit, OnDestroy {
   imageUrl = 'assets/images/backgr.jpeg';
+  slides = [
+    { url: 'https://img.freepik.com/free-vector/blue-futuristic-networking-technology_53876-100679.jpg?t=st=1746820066~exp=1746823666~hmac=14286607480fddbddb056c30dd4ee52300eb22a59e89bcf448d3e1ac15830e63&w=2000'},
+    { url: 'https://img.freepik.com/free-photo/man-using-digital-tablet-psd-mockup-smart-technology_53876-110815.jpg?t=st=1746821134~exp=1746824734~hmac=756f2ba2ad8c02ad4d1cc56d54243e67bbf339279e2da043aa8fea5a500f36d5&w=2000'},
+    { url: 'https://plus.unsplash.com/premium_photo-1661963874418-df1110ee39c1?q=80&w=3372&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: '' }
+  ];
+  currentSlide = 0;
+  private slideInterval: any;
+
+  ngOnInit() {
+    this.slideInterval = setInterval(() => this.nextSlide(), 4000); // 4 seconds
+  }
+  ngOnDestroy() {
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
+  }
+  prevSlide() { this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length; }
+  nextSlide() { this.currentSlide = (this.currentSlide + 1) % this.slides.length; }
+  goToSlide(i: number) { this.currentSlide = i; }
+  scrollToSection(sectionId: string) {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

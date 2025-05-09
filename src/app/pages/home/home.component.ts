@@ -5,6 +5,7 @@ import { HeroSectionComponent } from '../../components/hero-section/hero-section
 import { ArticleCardComponent } from '../../components/article-card/article-card.component';
 import { ArticleService } from '../../services/article.service';
 import { Article } from '../../models/article.model';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,24 @@ import { Article } from '../../models/article.model';
   template: `
     <app-hero-section></app-hero-section>
     
-    <section id="featured" class="section featured-section">
+    <section id="featured" class="section featured-section" data-aos="flip-up">
       <div class="container">
-        <h2 class="section-title">Featured Research</h2>
+        <h2 class="section-title">Dernières actualités</h2>
+        <div class="grid grid-3">
+          <app-article-card 
+            *ngFor="let article of latestArticles" 
+            [article]="article">
+          </app-article-card>
+        </div>
+        <div class="text-center" style="margin-top: var(--space-8);">
+          <a routerLink="/categories" class="btn btn-primary">Voir toutes les actualités</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="section featured-section" data-aos="fade-up-right">
+      <div class="container">
+        <h2 class="section-title">Recherches mises en avant</h2>
         <div class="grid grid-3">
           <app-article-card 
             *ngFor="let article of featuredArticles" 
@@ -26,7 +42,7 @@ import { Article } from '../../models/article.model';
       </div>
     </section>
     
-    <section class="section research-areas-section">
+    <section class="section research-areas-section" data-aos="fade-right" data-aos="zoom-up">
       <div class="container">
         <h2 class="section-title">Research Fields</h2>
         <div class="grid grid-4">
@@ -40,22 +56,7 @@ import { Article } from '../../models/article.model';
       </div>
     </section>
     
-    <section class="section latest-news-section">
-      <div class="container">
-        <h2 class="section-title">Latest News</h2>
-        <div class="grid grid-3">
-          <app-article-card 
-            *ngFor="let article of latestArticles" 
-            [article]="article">
-          </app-article-card>
-        </div>
-        <div class="text-center" style="margin-top: var(--space-8);">
-          <a routerLink="/categories" class="btn btn-primary">View All News</a>
-        </div>
-      </div>
-    </section>
-    
-    <section class="section timeline-section">
+    <section class="section timeline-section" data-aos="zoom-in">
       <div class="container">
         <h2 class="section-title">Research Timeline</h2>
         <div class="timeline">
@@ -70,7 +71,7 @@ import { Article } from '../../models/article.model';
       </div>
     </section>
     
-    <section class="section partners-section">
+    <section class="section partners-section" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
       <div class="container">
         <h2 class="section-title">Nos Partenaires</h2>
         <div class="partners-grid">
@@ -406,6 +407,7 @@ export class HomeComponent implements OnInit {
   constructor(private articleService: ArticleService) {}
 
   ngOnInit(): void {
+    AOS.init();
     this.articleService.getFeaturedArticles().subscribe(articles => {
       this.featuredArticles = articles;
     });
