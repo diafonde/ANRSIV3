@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SafePipe } from './safe.pipe';
+import { SafePipe } from '../../pages/videos/safe.pipe';
 
 @Component({
   selector: 'app-videos',
@@ -42,7 +42,7 @@ import { SafePipe } from './safe.pipe';
         <div class="media-grid">
           <div class="media-card" *ngFor="let photo of photos">
             <div class="media-thumb">
-              <img [src]="photo.url" [alt]="photo.title" />
+              <img [src]="photo.url" [alt]="photo.title" loading="lazy" />
             </div>
             <div class="media-caption">{{ photo.title }}</div>
           </div>
@@ -57,7 +57,7 @@ import { SafePipe } from './safe.pipe';
   styles: [`
     .contact-hero {
       position: relative;
-      height: 300px;
+      height: 250px;
       background-image: url('https://images.pexels.com/photos/2467506/pexels-photo-2467506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
       background-size: cover;
       background-position: center;
@@ -71,16 +71,17 @@ import { SafePipe } from './safe.pipe';
       position: relative;
       z-index: 2;
       text-align: center;
+      padding: 0 1rem;
     }
     
     .contact-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: var(--space-3);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 1rem;
       color: white;
     }
     
     .contact-hero p {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -305,58 +306,114 @@ import { SafePipe } from './safe.pipe';
       color: var(--neutral-600);
     }
 
-    .media-sections {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 2rem 1rem;
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
+
+    .media-sections {
+      margin: 2rem auto;
+      padding: 1rem 0;
+    }
+
     .media-block {
       margin-bottom: 3rem;
     }
+
     .media-title {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
       color: #1976d2;
       margin-bottom: 1.5rem;
       text-align: left;
     }
+
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
+
+    @media (min-width: 640px) {
+      .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .media-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     .media-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.2s;
     }
+
     .media-card:hover {
+      transform: translateY(-5px);
       box-shadow: 0 6px 24px rgba(25, 118, 210, 0.12);
     }
+
     .media-thumb {
+      position: relative;
       width: 100%;
-      aspect-ratio: 16/9;
-      background: #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      background: #f5f5f5;
     }
-    .media-thumb img, .media-thumb iframe {
+
+    .media-thumb img,
+    .media-thumb iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       border: none;
-      border-radius: 0;
     }
+
     .media-caption {
       padding: 1rem;
       font-weight: 500;
       text-align: center;
       color: #333;
+      background: white;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero {
+        height: 200px;
+      }
+
+      .media-sections {
+        margin: 1rem auto;
+      }
+
+      .media-block {
+        margin-bottom: 2rem;
+      }
+
+      .media-grid {
+        gap: 1rem;
+      }
+
+      .media-caption {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
     }
  
   `]
