@@ -14,7 +14,7 @@ import * as AOS from 'aos';
   template: `
     <app-hero-section></app-hero-section>
     
-    <section id="featured" class="section featured-section" data-aos="flip-up">
+    <section id="news" class="section featured-section" data-aos="flip-up">
       <div class="container">
         <h2 class="section-title">Dernières actualités</h2>
         <div class="grid grid-3">

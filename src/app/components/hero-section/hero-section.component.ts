@@ -11,15 +11,14 @@ import { CommonModule } from '@angular/common';
     <section class="hero-section" [ngStyle]="{'background-image': 'url(assets/images/backgr.jpeg)'}">
     
       <div class="hero-content">
-      <h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; color: white;" class="no-wap">Agence Nationale de la Recherche Scientifique et de l'innovation</h1>  
-      <br><br><br><br><br>
+      <h1 style="justify-content: center; margin-bottom: 20px; font-size: 2.5rem; font-weight: bold; color: white;" class="no-wap">Agence Nationale de la Recherche Scientifique et de l'innovation</h1>  
+      
 
       <!-- <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p> -->
         
         
         <div class="hero-buttons slide-up">
-          <a (click)="scrollToSection('slideshow-section')" class="btn btn-primary">Voir le slideshow</a>
-          <a (click)="scrollToSection('featured')" class="btn btn-secondary">Explorer la recherche</a>
+          <a (click)="scrollToSection('news')" class="btn btn-secondary">Explorer la recherche</a>
         </div>
       </div>
       <div class="hero-statistics slide-up">
@@ -77,9 +76,8 @@ import { CommonModule } from '@angular/common';
       font-weight: bold;
       color: white;
       text-align: center;
-   
     }
-    
+
     .hero-overlay {
       position: absolute;
       top: 0;
