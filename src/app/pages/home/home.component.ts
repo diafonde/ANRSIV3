@@ -56,16 +56,31 @@ import * as AOS from 'aos';
       </div>
     </section>
     
-    <section class="section timeline-section" data-aos="zoom-in">
+    <section class="section map-section" data-aos="fade-up">
       <div class="container">
-        <h2 class="section-title">Research Timeline</h2>
-        <div class="timeline">
-          <div class="timeline-item" *ngFor="let item of timelineItems; let isEven = even" [class.even]="isEven">
-            <div class="timeline-date">{{ item.year }}</div>
-            <div class="timeline-content">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
-            </div>
+        <h2 class="section-title">Notre Localisation</h2>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps?q=18.099534477533627,-15.979605442328959&z=15&output=embed" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="map-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nouakchott, Mauritanie</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>+222 45 24 24 24</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>contact&#64;anrsi.mr</span>
           </div>
         </div>
       </div>
@@ -344,6 +359,80 @@ import * as AOS from 'aos';
       font-weight: 500;
       text-align: center;
       color: var(--primary-900);
+    }
+
+    .map-section {
+      padding: var(--space-8) 0;
+      background-color: var(--neutral-50);
+    }
+
+    .map-container {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: var(--space-6);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .map-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .info-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .info-item i {
+      font-size: 1.5rem;
+      color: var(--primary-500);
+    }
+
+    .info-item span {
+      font-size: 1.1rem;
+      color: var(--neutral-700);
+    }
+
+    @media (max-width: 768px) {
+      .map-container {
+        height: 350px;
+      }
+
+      .map-info {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item {
+        padding: var(--space-3);
+      }
+
+      .info-item i {
+        font-size: 1.2rem;
+      }
+
+      .info-item span {
+        font-size: 1rem;
+      }
     }
   `]
 })

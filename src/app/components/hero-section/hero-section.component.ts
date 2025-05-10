@@ -58,8 +58,10 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     .hero-section {
+      
       position: relative;
       height: 100vh;
+      width: 100%;
       min-height: 600px;
       /* ... background-image: url('https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');*/
       /* background-image: url('assets/images/backgr.jpeg'); */
