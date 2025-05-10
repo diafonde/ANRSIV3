@@ -72,18 +72,19 @@ import * as AOS from 'aos';
         <div class="map-info">
           <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Nouakchott, Mauritanie</span>
+            <span style="color: green;">Nouakchott, Mauritanie</span>
           </div>
           <div class="info-item">
             <i class="fas fa-phone"></i>
-            <span>+222 45 24 24 24</span>
+            <span style="color: green;">+222 45 24 24 24</span>
           </div>
           <div class="info-item">
             <i class="fas fa-envelope"></i>
-            <span>contact&#64;anrsi.mr</span>
+            <span style="color: green;">contact&#64;anrsi.mr</span>
           </div>
         </div>
       </div>
+
     </section>
     
     <section class="section partners-section" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
@@ -405,12 +406,14 @@ import * as AOS from 'aos';
 
     .info-item i {
       font-size: 1.5rem;
-      color: var(--primary-500);
+      color: #083515;
+      width: 24px;
+      text-align: center;
     }
 
     .info-item span {
       font-size: 1.1rem;
-      color: var(--neutral-700);
+      font-weight: 500;
     }
 
     @media (max-width: 768px) {

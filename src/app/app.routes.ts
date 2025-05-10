@@ -5,7 +5,6 @@ import { ResearchCategoriesComponent } from './pages/research-categories/researc
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { VideosComponent } from './pages/videos/videos.component';
-import { PhotosComponent } from './pages/photos/photos.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +13,5 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'videos', component: VideosComponent },
-  { path: 'photos', component: PhotosComponent },
   { path: '**', redirectTo: '' }
 ];

@@ -24,7 +24,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/global_styles.css"],
+            "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/global_styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
