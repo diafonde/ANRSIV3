@@ -84,7 +84,7 @@ import { CommonModule } from '@angular/common';
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(54, 154, 119, 0.9), rgba(10, 61, 98, 0.7));
+      background: linear-gradient(to right, rgba(2, 39, 26, 0.9), rgba(10, 61, 98, 0.7));
       z-index: 1;
     }
     
