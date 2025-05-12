@@ -12,11 +12,6 @@ import { CommonModule } from '@angular/common';
     
       <div class="hero-content">
       <h1 style="justify-content: center; margin-bottom: 20px; font-size: 2.5rem; font-weight: bold; color: white;" class="no-wap">Agence Nationale de la Recherche Scientifique et de l'innovation</h1>  
-      
-
-      <!-- <p class="slide-up">La création de l'Agence Nationale de la Recherche Scientifique et de l'Innovation traduit clairement la volonté du Gouvernement de la République Islamique de Mauritanie.</p> -->
-        
-        
         <div class="hero-buttons slide-up">
           <a (click)="scrollToSection('news')" class="btn btn-secondary">Explorer la recherche</a>
         </div>

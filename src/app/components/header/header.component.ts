@@ -22,9 +22,16 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
           <ul>
             <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'Accueil' | translate }}</a></li>
             <li><a routerLink="/categories" routerLinkActive="active">{{ 'Domaine de recherche' | translate }}</a></li>
+            <li class="dropdown" [class.open]="dropdownOpen === 'pubs'" (mouseenter)="dropdownOpen = 'pubs'" (mouseleave)="dropdownOpen = null">
+            <a href="#" (click)="$event.preventDefault()">{{ 'Publications' | translate }} <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="#">{{ 'Articles' | translate }}</a>
+              <a href="#">{{ 'Thèses' | translate }}</a>
+              <a href="#">{{ 'Rapports' | translate }}</a>
+            </div>
+          </li>
             <li><a routerLink="/about" routerLinkActive="active">{{ 'A Propos' | translate }}</a></li>
-            <li><a routerLink="/contact" routerLinkActive="active">{{ 'Contact' | translate }}</a></li>
-            <li><a routerLink="/videos" routerLinkActive="active">{{ 'Mediatique' | translate }}</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">{{ 'Contact' | translate }}</a></li>            
           </ul>
         </nav>
         
@@ -237,9 +244,9 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
       position: absolute;
       top: 100%;
       left: 0;
-      background: var(--primary-900);
+      background: var(--primary-500);
       min-width: 160px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       z-index: 10;
       flex-direction: column;
       padding: var(--space-2) 0;
@@ -270,7 +277,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
     .language-dropdown button {
       padding: 0.5rem 1.2rem;
       border: none;
-      background: #1976d2;
+      background:rgb(11, 131, 61);
       color: white;
       border-radius: 4px;
       cursor: pointer;
@@ -288,6 +295,7 @@ export class HeaderComponent {
   scrolled = false;
   mobileMenuOpen = false;
   currentLang = 'fr';
+  dropdownOpen: string | null = null;
 
   constructor(public translate: TranslateService) {}
 
