@@ -1,12 +1,12 @@
 header {
   position: fixed;
-  top: 40px; /* Position below top bar */
+  top: 0; /* Header at the very top */
   left: 0;
   width: 100%;
   background: linear-gradient(135deg, #dae4ee 0%, #2b9867 100%);
   padding: var(--space-6) 0;
   height: 140px;
-  z-index: 1002;
+  z-index: 1003; /* Higher z-index than top bar */
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -151,7 +151,7 @@ header.scrolled {
   width: 24px;
   height: 18px;
   padding: 0;
-  z-index: 1003;
+  z-index: 1004;
   position: relative;
 }
 
@@ -177,7 +177,7 @@ header.scrolled {
 
 @media (max-width: 768px) {
   header {
-    top: 0 !important; /* No top bar on mobile, so header starts at top */
+    top: 0 !important; /* Header stays at top on mobile */
     height: 100px;
   }
   
@@ -216,7 +216,7 @@ header.scrolled {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
-    z-index: 1001;
+    z-index: 1002;
     display: block;
   }
   
@@ -248,7 +248,7 @@ header.scrolled {
   
   .mobile-menu-btn {
     display: flex;
-    z-index: 1003;
+    z-index: 1004;
   }
   
   header.mobile-open {
@@ -263,7 +263,7 @@ header.scrolled {
 
 @media (max-width: 480px) {
   header {
-    top: 0 !important; /* No top bar on mobile, so header starts at top */
+    top: 0 !important; /* Header stays at top on small mobile */
     height: 85px;
   }
   

@@ -21,6 +21,12 @@ export class HeaderComponent {
   @HostListener('window:scroll')
   onWindowScroll() {
     this.scrolled = window.scrollY > 50;
+    // Add/remove class to body for CSS targeting
+    if (this.scrolled) {
+      document.body.classList.add('header-scrolled');
+    } else {
+      document.body.classList.remove('header-scrolled');
+    }
   }
 
   toggleMobileMenu() {
