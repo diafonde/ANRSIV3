@@ -5,6 +5,9 @@ import { ResearchCategoriesComponent } from './pages/research-categories/researc
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { VideosComponent } from './pages/videos/videos.component';
+import { ProgrammesComponent } from './pages/programmes/programmes.component';
+import { FinancementComponent } from './pages/financement/financement.component';
+import { CooperationComponent } from './pages/cooperation/cooperation.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,5 +16,8 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'videos', component: VideosComponent },
+  { path: 'programs', component: ProgrammesComponent },
+  { path: 'funding', component: FinancementComponent },
+  { path: 'cooperation', component: CooperationComponent },
   { path: '**', redirectTo: '' }
 ];

@@ -1,12 +1,12 @@
 header {
   position: fixed;
-  top: 0;
+  top: 40px; /* Position below top bar */
   left: 0;
   width: 100%;
   background: linear-gradient(135deg, #dae4ee 0%, #2b9867 100%);
   padding: var(--space-6) 0;
   height: 140px;
-  z-index: 1000;
+  z-index: 1002;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -71,6 +71,16 @@ header.scrolled {
   height: 100%;
 }
 
+@media (min-width: 769px) {
+  .main-nav {
+    display: block;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
 .main-nav a {
   color: black;
   font-weight: 500;
@@ -105,6 +115,13 @@ header.scrolled {
   height: 100%;
 }
 
+.ministre-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-right: var(--space-2);
+}
+
 .search-btn, .language-btn {
   background: transparent;
   border: none;
@@ -134,6 +151,8 @@ header.scrolled {
   width: 24px;
   height: 18px;
   padding: 0;
+  z-index: 1003;
+  position: relative;
 }
 
 .mobile-menu-btn span {
@@ -157,25 +176,48 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
+  header {
+    top: 0 !important; /* No top bar on mobile, so header starts at top */
+    height: 100px;
+  }
+  
+  header.scrolled {
+    height: 90px;
+  }
+  
   .header-container {
     padding: 0 var(--space-3);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    transform: translateY(-4px); /* Move logos up slightly on mobile */
   }
   
   .logo-image {
-    height: 80px;
+    height: 70px;
+  }
+  
+  .ministre-logo {
+    height: 45px;
   }
   
   .main-nav {
     position: fixed;
-    top: 60px;
+    top: 140px;
     left: 0;
     width: 100%;
-    background-color: #083515;
+    background-color: rgba(8, 53, 21, 0.98);
+    backdrop-filter: blur(10px);
     padding: var(--space-4);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+    z-index: 1001;
+    display: block;
   }
   
   .main-nav.active {
@@ -188,32 +230,83 @@ header.scrolled {
     flex-direction: column;
     align-items: center;
     gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-nav li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: var(--space-2) var(--space-4);
+    color: white !important;
+    font-size: 1.1rem;
   }
   
   .mobile-menu-btn {
     display: flex;
+    z-index: 1003;
   }
   
   header.mobile-open {
-    background: #083515;
+    background: linear-gradient(135deg, #dae4ee 0%, #2b9867 100%);
   }
   
   .actions {
     gap: var(--space-2);
+    flex-shrink: 0;
   }
 }
 
 @media (max-width: 480px) {
+  header {
+    top: 0 !important; /* No top bar on mobile, so header starts at top */
+    height: 85px;
+  }
+  
+  header.scrolled {
+    height: 80px;
+  }
+  
   .header-container {
     padding: 0 var(--space-2);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    flex-shrink: 0;
+    transform: translateY(-4px); /* Move logos up slightly on small mobile */
   }
   
   .logo-image {
-    height: 70px;
+    height: 60px;
+  }
+  
+  .ministre-logo {
+    height: 35px;
+  }
+  
+  .main-nav {
+    top: 120px;
+    padding: var(--space-3);
   }
   
   .main-nav ul {
     gap: var(--space-3);
+  }
+  
+  .main-nav a {
+    padding: var(--space-2) var(--space-3);
+    font-size: 1rem;
+  }
+  
+  .actions {
+    gap: var(--space-1);
+    flex-shrink: 0;
   }
 }
 
@@ -226,9 +319,9 @@ header.scrolled {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #083515;
+  background: #0c2114;
   min-width: 160px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(100, 152, 186, 0.15);
   z-index: 10;
   flex-direction: column;
   padding: var(--space-2) 0;

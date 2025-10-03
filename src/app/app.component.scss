@@ -6,7 +6,19 @@
 
 main {
   flex: 1;
-  padding-top: 160px; /* Account for bigger header height */
+  padding-top: 180px; /* Account for top bar (40px) + header height (140px) */
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 100px; /* Only header height on mobile (no top bar) */
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 85px; /* Only header height on small mobile (no top bar) */
+  }
 }
 
 .lang-switcher {

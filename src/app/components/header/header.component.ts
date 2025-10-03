@@ -27,6 +27,10 @@ export class HeaderComponent {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+  }
+
   toggleLanguage() {
     this.currentLang = this.currentLang === 'fr' ? 'ar' : 'fr';
     this.translate.use(this.currentLang);
