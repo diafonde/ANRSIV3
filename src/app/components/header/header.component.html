@@ -1,0 +1,42 @@
+<header [class.scrolled]="scrolled" [class.mobile-open]="mobileMenuOpen">
+  <div class="container header-container">
+    <div class="logo">
+      <img src="assets/images/logos.png" alt="ANRSI Logo" class="logo-image">
+      <a routerLink="/">
+        <!-- <span class="logo-text">ANRSI</span> -->
+      </a>
+      
+    </div>
+    
+    <nav class="main-nav" [class.active]="mobileMenuOpen">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'Accueil' | translate }}</a></li>
+        <li><a routerLink="/news" routerLinkActive="active">{{ 'Actualités' | translate }}</a></li>
+        <li class="dropdown" [class.open]="dropdownOpen === 'presentation'" (mouseenter)="dropdownOpen = 'presentation'" (mouseleave)="dropdownOpen = null">
+          <a href="#" (click)="$event.preventDefault()">{{ 'Présentation' | translate }} <span class="arrow">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="#">{{ 'Missions' | translate }}</a>
+            <a href="#">{{ 'Objectifs' | translate }}</a>
+            <a href="#">{{ 'Vision Stratégique' | translate }}</a>
+            <a href="#">{{ 'Organigramme' | translate }}</a>
+          </div>
+        </li>
+        <li><a routerLink="/funding" routerLinkActive="active">{{ 'Financement' | translate }}</a></li>
+        <li><a routerLink="/programs" routerLinkActive="active">{{ 'Programmes' | translate }}</a></li>
+        <li><a routerLink="/cooperation" routerLinkActive="active">{{ 'Coopération' | translate }}</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">{{ 'Contact' | translate }}</a></li>            
+      </ul>
+    </nav>
+    
+    <div class="actions">
+      
+  
+      
+      <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Menu">
+        <span [class.open]="mobileMenuOpen"></span>
+        <span [class.open]="mobileMenuOpen"></span>
+        <span [class.open]="mobileMenuOpen"></span>
+      </button>
+    </div>
+  </div>
+</header>
