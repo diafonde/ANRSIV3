@@ -306,8 +306,7 @@ Le Professeur Bouh Regad a formulé plusieurs recommandations pour l'ANRSI :
   }
 
   getArticleById(id: string): Observable<Article | undefined> {
-    return of(this.articles.find(article => article.id === id))
-      .pipe(delay(300));
+    return of(this.articles.find(article => article.id === id));
   }
 
   getArticlesByCategory(category: string): Observable<Article[]> {

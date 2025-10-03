@@ -15,6 +15,8 @@ export class ArticleDetailComponent implements OnInit {
   article: Article | undefined;
   articleParagraphs: string[] = [];
   relatedArticles: Article[] = [];
+  articleNotFound = false;
+  loading = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,26 +26,45 @@ export class ArticleDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
+      console.log('Article ID:', id); // Debug log
+      
       if (id) {
-        this.articleService.getArticleById(id).subscribe(article => {
-          this.article = article;
-          
-          if (this.article) {
-            // Create paragraphs from content
-            this.articleParagraphs = this.article.content.split('\n\n').filter(p => p.trim() !== '');
+        this.loading = true;
+        this.articleNotFound = false;
+        
+        this.articleService.getArticleById(id).subscribe({
+          next: (article) => {
+            console.log('Article found:', article); // Debug log
+            this.article = article;
+            this.loading = false;
             
-            // Find related articles
-            this.articleService.getArticles().subscribe(articles => {
-              this.relatedArticles = articles
-                .filter(a => a.id !== this.article?.id)
-                .filter(a => 
-                  a.category === this.article?.category || 
-                  a.tags.some(tag => this.article?.tags.includes(tag))
-                )
-                .slice(0, 3);
-            });
+            if (this.article) {
+              // Create paragraphs from content
+              this.articleParagraphs = this.article.content.split('\n\n').filter(p => p.trim() !== '');
+              
+              // Find related articles
+              this.articleService.getArticles().subscribe(articles => {
+                this.relatedArticles = articles
+                  .filter(a => a.id !== this.article?.id)
+                  .filter(a => 
+                    a.category === this.article?.category || 
+                    a.tags.some(tag => this.article?.tags.includes(tag))
+                  )
+                  .slice(0, 3);
+              });
+            } else {
+              this.articleNotFound = true;
+            }
+          },
+          error: (error) => {
+            console.error('Error loading article:', error); // Debug log
+            this.loading = false;
+            this.articleNotFound = true;
           }
         });
+      } else {
+        this.loading = false;
+        this.articleNotFound = true;
       }
     });
   }

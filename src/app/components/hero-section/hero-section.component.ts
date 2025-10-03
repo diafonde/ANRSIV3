@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -51,6 +52,8 @@ export class HeroSectionComponent implements OnInit, OnDestroy {
   currentSlide = 0;
   private slideInterval: any;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.slideInterval = setInterval(() => this.nextSlide(), 4000); // 4 seconds
   }
@@ -63,11 +66,11 @@ export class HeroSectionComponent implements OnInit, OnDestroy {
   nextSlide() { this.currentSlide = (this.currentSlide + 1) % this.slides.length; }
   goToSlide(i: number) { this.currentSlide = i; }
   onSlideClick(slide: any, index: number) {
-    console.log('Slide clicked:', slide.title, 'Index:', index);
+    console.log('Slide clicked:', slide.title, 'Index:', index, 'URL:', slide.actionUrl);
     
-    // Navigate to the article URL
+    // Navigate to the article URL using Angular Router
     if (slide.actionUrl) {
-      window.location.href = slide.actionUrl;
+      this.router.navigate([slide.actionUrl]);
     }
   }
 

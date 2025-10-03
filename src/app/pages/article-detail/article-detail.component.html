@@ -1,4 +1,22 @@
-<div class="article-detail-hero" *ngIf="article">
+<!-- Loading State -->
+<div class="loading-indicator" *ngIf="loading">
+  <div class="spinner"></div>
+  <p>Loading article...</p>
+</div>
+
+<!-- Article Not Found State -->
+<div class="article-not-found" *ngIf="articleNotFound && !loading">
+  <div class="container">
+    <div class="not-found-content">
+      <h1>Article Not Found</h1>
+      <p>The article you're looking for doesn't exist or has been removed.</p>
+      <a routerLink="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<!-- Article Content -->
+<div class="article-detail-hero" *ngIf="article && !loading">
   <div class="container">
     <div class="article-category">{{ article.category }}</div>
     <h1>{{ article.title }}</h1>
@@ -20,7 +38,7 @@
   <div class="hero-overlay"></div>
 </div>
 
-<div class="container" *ngIf="article">
+<div class="container" *ngIf="article && !loading">
   <div class="article-content">
     <div class="article-summary">
       {{ article.summary }}
@@ -82,9 +100,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="loading-indicator" *ngIf="!article">
-  <div class="spinner"></div>
-  <p>Loading article...</p>
 </div>
