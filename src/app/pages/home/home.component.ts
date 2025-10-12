@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
       this.featuredArticles = articles;
     });
     
-    this.articleService.getRecentArticles(3).subscribe(articles => {
+    this.articleService.getRecentArticles().subscribe(articles => {
       this.latestArticles = articles;
     });
     

@@ -32,7 +32,7 @@ export class ArticleDetailComponent implements OnInit {
         this.loading = true;
         this.articleNotFound = false;
         
-        this.articleService.getArticleById(id).subscribe({
+        this.articleService.getArticleById(+id).subscribe({
           next: (article) => {
             console.log('Article found:', article); // Debug log
             this.article = article;
@@ -43,12 +43,12 @@ export class ArticleDetailComponent implements OnInit {
               this.articleParagraphs = this.article.content.split('\n\n').filter(p => p.trim() !== '');
               
               // Find related articles
-              this.articleService.getArticles().subscribe(articles => {
+              this.articleService.getAllArticles().subscribe((articles: Article[]) => {
                 this.relatedArticles = articles
-                  .filter(a => a.id !== this.article?.id)
-                  .filter(a => 
+                  .filter((a: Article) => a.id !== this.article?.id)
+                  .filter((a: Article) => 
                     a.category === this.article?.category || 
-                    a.tags.some(tag => this.article?.tags.includes(tag))
+                    a.tags.some((tag: string) => this.article?.tags.includes(tag))
                   )
                   .slice(0, 3);
               });

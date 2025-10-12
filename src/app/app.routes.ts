@@ -8,6 +8,7 @@ import { VideosComponent } from './pages/videos/videos.component';
 import { ProgrammesComponent } from './pages/programmes/programmes.component';
 import { FinancementComponent } from './pages/financement/financement.component';
 import { CooperationComponent } from './pages/cooperation/cooperation.component';
+import { adminRoutes } from './admin/admin.routes';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'programs', component: ProgrammesComponent },
   { path: 'funding', component: FinancementComponent },
   { path: 'cooperation', component: CooperationComponent },
+  ...adminRoutes,
   { path: '**', redirectTo: '' }
 ];

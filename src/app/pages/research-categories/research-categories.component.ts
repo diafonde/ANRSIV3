@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { ArticleCardComponent } from '../../components/article-card/article-card.component';
 import { ArticleService } from '../../services/article.service';
 import { Article } from '../../models/article.model';
@@ -8,7 +7,7 @@ import { Article } from '../../models/article.model';
 @Component({
   selector: 'app-research-categories',
   standalone: true,
-  imports: [CommonModule, RouterLink, ArticleCardComponent],
+  imports: [CommonModule, ArticleCardComponent],
   template: `
     <div class="categories-hero">
       <div class="container">
@@ -181,7 +180,7 @@ export class ResearchCategoriesComponent implements OnInit {
   constructor(private articleService: ArticleService) {}
   
   ngOnInit(): void {
-    this.articleService.getArticles().subscribe(articles => {
+    this.articleService.getAllArticles().subscribe((articles: Article[]) => {
       this.allArticles = articles;
       this.filterArticles();
     });

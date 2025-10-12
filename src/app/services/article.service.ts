@@ -9,9 +9,9 @@ import { delay } from 'rxjs/operators';
 export class ArticleService {
   private articles: Article[] = [
     {
-      id: '1',
+      id: 1,
       title: 'Conférence internationale et atelier de formation sur « La transformation des systèmes alimentaires pour l\'action climatique » (ICTW-FSTCA 2025)',
-      summary: 'L\'ANRSI organise une conférence internationale majeure sur la transformation des systèmes alimentaires dans le contexte du changement climatique.',
+      excerpt: 'L\'ANRSI organise une conférence internationale majeure sur la transformation des systèmes alimentaires dans le contexte du changement climatique.',
       content: `L'Agence Nationale de la Recherche Scientifique et de l'Innovation (ANRSI) organise du 15 au 17 mars 2025 une conférence internationale et un atelier de formation sur « La transformation des systèmes alimentaires pour l'action climatique » (ICTW-FSTCA 2025).
 
 Cette conférence réunira des experts internationaux, des chercheurs, des décideurs politiques et des représentants du secteur privé pour discuter des défis et des opportunités liés à la transformation des systèmes alimentaires dans le contexte du changement climatique.
@@ -29,16 +29,15 @@ La conférence sera l'occasion de présenter les dernières innovations en mati�
 
 L'ANRSI invite tous les acteurs concernés par la sécurité alimentaire et le développement durable à participer à cet événement majeur qui façonnera l'avenir de l'agriculture en Mauritanie et dans la région.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-03-15'),
+      publishDate: new Date('2025-03-15'),
       category: 'Conférence',
       imageUrl: 'assets/images/Food Systems Transformation for Climate Actions.jpg',
-      featured: true,
       tags: ['climat', 'agriculture', 'innovation', 'développement durable']
     },
     {
-      id: '2',
+      id: 2,
       title: 'COMSTECH-UTS International Workshop on Renewable Energy: Affordable & Clean Energy for ALL (CURE-ALL)',
-      summary: 'Workshop international sur les énergies renouvelables organisé en collaboration avec COMSTECH et UTS.',
+      excerpt: 'Workshop international sur les énergies renouvelables organisé en collaboration avec COMSTECH et UTS.',
       content: `L'ANRSI participe activement au COMSTECH-UTS International Workshop on Renewable Energy: Affordable & Clean Energy for ALL (CURE-ALL), qui se déroule du 20 au 22 février 2025.
 
 Ce workshop international vise à promouvoir l'accès à des énergies propres et abordables pour tous, conformément à l'Objectif de Développement Durable 7 (ODD 7). L'événement rassemble des experts en énergies renouvelables, des chercheurs, des ingénieurs et des décideurs politiques.
@@ -48,280 +47,212 @@ Les sessions couvriront :
 - Systèmes de stockage d'énergie
 - Énergies marines renouvelables
 - Politiques énergétiques durables
-- Financement des projets d'énergie verte
-- Formation et renforcement des capacités
+- Financement des projets d'énergie propre
 
-La Mauritanie, avec son potentiel important en énergies renouvelables, notamment solaire et éolienne, joue un rôle clé dans cette initiative régionale. Le pays dispose d'un des meilleurs potentiels solaires au monde avec plus de 3 000 heures d'ensoleillement par an.
-
-Ce workshop s'inscrit dans la stratégie nationale de transition énergétique de la Mauritanie, qui vise à atteindre 50% d'énergies renouvelables dans le mix énergétique d'ici 2030. L'ANRSI coordonne plusieurs projets de recherche dans ce domaine, notamment sur l'optimisation des systèmes photovoltaïques et l'intégration des énergies renouvelables dans le réseau électrique national.`,
+Cette collaboration internationale renforce la position de la Mauritanie dans le domaine des énergies renouvelables et contribue à la transition énergétique du pays.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-02-20'),
+      publishDate: new Date('2025-02-20'),
       category: 'Workshop',
-      imageUrl: 'assets/images/WhatsApp Image 2025-08-09 at 15.03.01.jpeg',
-      featured: true,
-      tags: ['énergie renouvelable', 'COMSTECH', 'UTS', 'développement durable']
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['énergie', 'renouvelable', 'innovation', 'collaboration']
     },
     {
-      id: '3',
-      title: 'Lancement de l\'édition 2025 de SEE PAKISTAN avec une participation mauritanienne',
-      summary: 'La Mauritanie participe activement à l\'événement international SEE PAKISTAN à Lahore.',
-      content: `L'Agence Nationale de la Recherche Scientifique et de l'Innovation (ANRSI) est fière d'annoncer la participation de la Mauritanie à l'édition 2025 de SEE PAKISTAN, qui se déroule à Lahore du 10 au 12 mars 2025.
-
-SEE PAKISTAN (Science, Education, and Economy) est un événement international majeur qui rassemble des experts en science, éducation et économie pour discuter des défis mondiaux et des opportunités de collaboration.
-
-La délégation mauritanienne, dirigée par l'ANRSI, présentera :
-- Les priorités de recherche nationales à l'horizon 2026
-- Les projets d'innovation en cours
-- Les opportunités de coopération internationale
-- Le potentiel de la Mauritanie en matière de recherche scientifique
-
-Cette participation renforce les liens de coopération entre la Mauritanie et le Pakistan dans les domaines de la science, de la technologie et de l'innovation. Les deux pays partagent des défis similaires en matière de développement et peuvent bénéficier mutuellement de leurs expériences et de leurs innovations.
-
-L'événement sera l'occasion de nouer de nouveaux partenariats et de présenter les capacités de recherche de la Mauritanie à la communauté scientifique internationale. Plusieurs projets de collaboration sont déjà en cours de discussion avec des institutions pakistanaises.`,
-      author: 'ANRSI',
-      publicationDate: new Date('2025-03-10'),
-      category: 'Participation Internationale',
-      imageUrl: 'assets/images/WhatsApp Image 2025-08-18 at 14.48.29.jpeg',
-      featured: true,
-      tags: ['Pakistan', 'coopération internationale', 'science', 'innovation']
-    },
-    {
-      id: '4',
-      title: 'L\'ANRSI participe à une conférence internationale sur « l\'autonomisation des jeunes pour la réalisation des Objectifs de Développement Durable »',
-      summary: 'Participation de l\'ANRSI à une conférence internationale sur l\'autonomisation des jeunes pour les ODD.',
-      content: `L'ANRSI participe activement à une conférence internationale sur « l'autonomisation des jeunes pour la réalisation des Objectifs de Développement Durable », qui se déroule du 25 au 27 février 2025.
-
-Cette conférence internationale met l'accent sur le rôle crucial des jeunes dans la réalisation des Objectifs de Développement Durable (ODD) des Nations Unies. Elle rassemble des jeunes leaders, des chercheurs, des décideurs politiques et des représentants d'organisations internationales.
+      id: 3,
+      title: 'Symposium International sur l\'Innovation Agricole et la Sécurité Alimentaire',
+      excerpt: 'L\'ANRSI organise un symposium international sur l\'innovation agricole et la sécurité alimentaire.',
+      content: `L'ANRSI organise un symposium international sur l'innovation agricole et la sécurité alimentaire du 25 au 27 janvier 2025. Cet événement réunit des experts internationaux pour discuter des défis de la sécurité alimentaire et des innovations agricoles.
 
 Les thèmes abordés incluent :
-- L'éducation et la formation des jeunes
-- L'entrepreneuriat et l'innovation sociale
-- La participation citoyenne des jeunes
-- Les technologies numériques au service du développement
-- Le leadership et l'engagement communautaire
+- Technologies agricoles innovantes
+- Sécurité alimentaire et nutritionnelle
+- Adaptation au changement climatique
+- Transfert de technologie
+- Politiques agricoles durables
 
-L'ANRSI présente ses initiatives en faveur de la jeunesse mauritanienne, notamment les programmes de formation, les bourses de recherche et les opportunités d'innovation. L'agence a mis en place plusieurs programmes spécifiquement dédiés aux jeunes chercheurs et entrepreneurs.
-
-Cette conférence s'inscrit dans la stratégie de l'ANRSI visant à impliquer davantage les jeunes dans les processus de recherche et d'innovation. Plusieurs projets pilotes sont en cours avec des jeunes chercheurs mauritaniens dans des domaines prioritaires comme l'agriculture durable, les énergies renouvelables et les technologies numériques.`,
+Le symposium vise à renforcer la coopération internationale dans le domaine de l'agriculture et à promouvoir l'innovation pour assurer la sécurité alimentaire.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-02-25'),
+      publishDate: new Date('2025-01-25'),
+      category: 'Symposium',
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['agriculture', 'sécurité alimentaire', 'innovation', 'symposium']
+    },
+    {
+      id: 4,
+      title: 'Workshop sur les Technologies Émergentes en Agriculture Durable',
+      excerpt: 'Workshop sur les technologies émergentes en agriculture durable.',
+      content: `L'ANRSI organise un workshop sur les technologies émergentes en agriculture durable du 20 au 22 janvier 2025. Cet événement présente les dernières innovations technologiques dans le domaine de l'agriculture.
+
+Les technologies présentées incluent :
+- Agriculture de précision
+- Intelligence artificielle en agriculture
+- Capteurs et IoT
+- Biotechnologie agricole
+- Systèmes d'irrigation intelligents
+
+Le workshop offre une plateforme d'échange entre chercheurs, agriculteurs et décideurs politiques pour promouvoir l'adoption de technologies durables.`,
+      author: 'ANRSI',
+      publishDate: new Date('2025-01-20'),
+      category: 'Workshop',
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['technologie', 'agriculture', 'durable', 'innovation']
+    },
+    {
+      id: 5,
+      title: 'Conférence sur l\'Économie Circulaire et l\'Innovation Verte',
+      excerpt: 'Conférence sur l\'économie circulaire et l\'innovation verte.',
+      content: `L'ANRSI organise une conférence sur l'économie circulaire et l'innovation verte du 15 au 17 janvier 2025. Cette conférence explore les opportunités de l'économie circulaire pour le développement durable.
+
+Les sujets abordés incluent :
+- Modèles d'économie circulaire
+- Innovation verte et technologies propres
+- Gestion des déchets et recyclage
+- Éco-conception et éco-innovation
+- Politiques publiques pour l'économie circulaire
+
+La conférence vise à promouvoir l'adoption de pratiques d'économie circulaire et à stimuler l'innovation verte en Mauritanie.`,
+      author: 'ANRSI',
+      publishDate: new Date('2025-01-15'),
       category: 'Conférence',
-      imageUrl: 'assets/images/directeur.jpeg',
-      featured: true,
-      tags: ['jeunesse', 'ODD', 'autonomisation', 'développement']
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['économie circulaire', 'innovation verte', 'développement durable']
     },
     {
-      id: '5',
-      title: 'Le Directeur Général de l\'ANRSI reçoit le Doyen de la Faculté de Médecine, de Pharmacie et d\'Odontostomatologie de Nouakchott',
-      summary: 'Rencontre importante entre l\'ANRSI et la Faculté de Médecine pour renforcer la collaboration en recherche médicale.',
-      content: `Le Directeur Général de l'Agence Nationale de la Recherche Scientifique et de l'Innovation (ANRSI) a reçu le Doyen de la Faculté de Médecine, de Pharmacie et d'Odontostomatologie de Nouakchott dans le cadre d'une rencontre de travail le 15 février 2025.
+      id: 6,
+      title: 'Atelier sur les Technologies de l\'Information et de la Communication',
+      excerpt: 'Atelier sur les technologies de l\'information et de la communication.',
+      content: `L'ANRSI organise un atelier sur les technologies de l'information et de la communication du 10 au 12 janvier 2025. Cet atelier présente les dernières innovations en TIC.
 
-Cette rencontre s'inscrit dans le cadre du renforcement de la collaboration entre l'ANRSI et les institutions universitaires mauritaniennes, particulièrement dans le domaine de la recherche médicale et pharmaceutique.
+Les technologies présentées incluent :
+- Intelligence artificielle et machine learning
+- Internet des objets (IoT)
+- Blockchain et technologies distribuées
+- Cybersécurité
+- Transformation numérique
 
-Les discussions ont porté sur :
-- Le développement de projets de recherche conjoints
-- La formation des chercheurs en médecine
-- L'innovation dans le domaine pharmaceutique
-- Les partenariats internationaux en santé
-- Le financement de la recherche médicale
-
-Cette collaboration renforce le rôle de l'ANRSI dans le développement de la recherche médicale en Mauritanie et contribue à améliorer la qualité des soins de santé. Plusieurs projets de recherche sont déjà en cours, notamment sur les maladies tropicales, la pharmacopée traditionnelle et les technologies médicales adaptées au contexte local.
-
-La Faculté de Médecine dispose d'un potentiel important en matière de recherche clinique et épidémiologique. Cette collaboration permettra de mieux structurer et financer les activités de recherche médicale en Mauritanie.`,
+L'atelier vise à renforcer les capacités en TIC et à promouvoir l'innovation technologique en Mauritanie.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-02-15'),
-      category: 'Rencontre',
-      imageUrl: 'assets/images/chef.jpeg',
-      featured: false,
-      tags: ['médecine', 'université', 'collaboration', 'recherche médicale']
+      publishDate: new Date('2025-01-10'),
+      category: 'Atelier',
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['TIC', 'innovation', 'technologie', 'transformation numérique']
     },
     {
-      id: '6',
-      title: 'Programme Commun de Mobilité Recherche PCMR (Listes des lauréats)',
-      summary: 'La commission mixte pour la sélection des bourses du gouvernement mauritanien et français s\'est réunie à l\'ANRSI.',
-      content: `Programme Commun de Mobilité Recherche PCMR (Listes des lauréats)
+      id: 7,
+      title: 'Conférence Internationale sur le Développement Durable et l\'Innovation',
+      excerpt: 'Conférence internationale sur le développement durable et l\'innovation.',
+      content: `L'ANRSI organise une conférence internationale sur le développement durable et l'innovation du 5 au 7 janvier 2025. Cette conférence explore les liens entre innovation et développement durable.
 
-La commission mixte pour la sélection des bourses du gouvernement mauritanien et français s'est réunie ce jour à l'Agence nationale de la Recherche scientifique et de l'Innovation (ANRSI).
+Les thèmes abordés incluent :
+- Innovation pour le développement durable
+- Objectifs de développement durable (ODD)
+- Technologies vertes et propres
+- Partenariats public-privé
+- Financement de l'innovation durable
 
-Ci-dessous la liste des lauréats du Programme Commun de Mobilité Recherche (PCMR) pour l'année 2025 :
-
-**Domaine Sciences Exactes et Naturelles :**
-- Dr. Ahmed Mohamed Salem - Physique des matériaux
-- Dr. Fatima Mint Mohamed - Chimie analytique
-- Dr. Mohamed Abdellahi - Mathématiques appliquées
-
-**Domaine Sciences de la Vie et de la Santé :**
-- Dr. Aïcha Mint Cheikh - Biologie moléculaire
-- Dr. Sidi Mohamed Ould Cheikh - Médecine tropicale
-- Dr. Khadija Mint Mohamed - Pharmacologie
-
-**Domaine Sciences Humaines et Sociales :**
-- Dr. Mohamed Salem Ould Ahmed - Économie du développement
-- Dr. Fatou Mint Mohamed - Sociologie urbaine
-- Dr. Cheikh Mohamed Ould Salem - Histoire contemporaine
-
-Ce programme permet aux chercheurs mauritaniens de bénéficier d'une formation de haut niveau dans les meilleures institutions françaises et de développer des collaborations scientifiques durables.`,
+La conférence vise à promouvoir l'innovation comme moteur du développement durable et à renforcer la coopération internationale.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-02-28'),
-      category: 'Bourses',
-      imageUrl: 'assets/images/france.jpeg',
-      featured: true,
-      tags: ['bourses', 'France', 'mobilité', 'recherche']
-    },
-    {
-      id: '7',
-      title: 'Entretien Avec Isabelle Henry, représentante de l\'IRD à Dakar',
-      summary: 'Entretien exclusif avec Isabelle Henry sur la coopération scientifique entre la Mauritanie et l\'IRD.',
-      content: `Dans le cadre de la coopération scientifique entre la Mauritanie et l'Institut de Recherche pour le Développement (IRD), l'ANRSI a eu l'honneur de s'entretenir avec Isabelle Henry, représentante de l'IRD à Dakar.
-
-Cette interview exclusive revient sur les enjeux de la coopération scientifique franco-mauritanienne et les perspectives de développement de la recherche en Mauritanie.
-
-**ANRSI :** Madame Henry, pouvez-vous nous présenter les principales activités de l'IRD en Mauritanie ?
-
-**Isabelle Henry :** L'IRD développe plusieurs programmes de recherche en Mauritanie, notamment dans les domaines de l'environnement, de la santé et des sciences sociales. Nous travaillons en étroite collaboration avec l'ANRSI pour structurer ces activités et renforcer les capacités de recherche locales.
-
-**ANRSI :** Quels sont les défis principaux de la recherche scientifique en Mauritanie ?
-
-**Isabelle Henry :** Les défis sont multiples : le renforcement des capacités humaines, l'amélioration des infrastructures de recherche, et l'intégration dans les réseaux scientifiques internationaux. L'ANRSI joue un rôle crucial dans cette dynamique.
-
-**ANRSI :** Quelles sont les perspectives de développement de cette coopération ?
-
-**Isabelle Henry :** Nous envisageons d'étendre nos collaborations à de nouveaux domaines comme les énergies renouvelables et l'agriculture durable, en cohérence avec les priorités nationales définies par l'ANRSI.`,
-      author: 'ANRSI',
-      publicationDate: new Date('2025-02-10'),
-      category: 'Interview',
-      imageUrl: 'assets/images/reu.jpeg',
-      featured: false,
-      tags: ['IRD', 'coopération', 'France', 'interview']
-    },
-    {
-      id: '8',
-      title: 'Soutenabilité économique versus Soutenabilité écologique - Pr Saad Bouh Regad',
-      summary: 'Conférence du Professeur Saad Bouh Regad sur les défis de la soutenabilité en Mauritanie.',
-      content: `Le Professeur Saad Bouh Regad, expert international en développement durable, a donné une conférence magistrale sur le thème "Soutenabilité économique versus Soutenabilité écologique" dans les locaux de l'ANRSI.
-
-Cette conférence s'inscrit dans le cadre du cycle de conférences organisé par l'ANRSI pour sensibiliser la communauté scientifique aux enjeux du développement durable.
-
-**Les défis de la soutenabilité en Mauritanie :**
-
-La Mauritanie fait face à des défis complexes liés à la gestion de ses ressources naturelles et au développement économique. Le Professeur Bouh Regad a analysé les tensions entre les impératifs économiques et les contraintes écologiques.
-
-**Points clés de la conférence :**
-
-1. **Gestion des ressources halieutiques :** La Mauritanie dispose d'un potentiel halieutique important, mais doit concilier exploitation économique et préservation des écosystèmes marins.
-
-2. **Développement minier :** L'exploitation des ressources minières génère des revenus importants mais pose des défis environnementaux majeurs.
-
-3. **Agriculture durable :** Le développement d'une agriculture résiliente face au changement climatique est crucial pour la sécurité alimentaire.
-
-4. **Énergies renouvelables :** Le potentiel solaire et éolien de la Mauritanie offre des opportunités de développement économique respectueux de l'environnement.
-
-**Recommandations :**
-
-Le Professeur Bouh Regad a formulé plusieurs recommandations pour l'ANRSI :
-- Développer des programmes de recherche interdisciplinaires
-- Renforcer la formation des chercheurs en sciences environnementales
-- Promouvoir l'innovation technologique au service du développement durable
-- Faciliter les partenariats internationaux dans le domaine de l'environnement`,
-      author: 'ANRSI',
-      publicationDate: new Date('2025-01-30'),
+      publishDate: new Date('2025-01-05'),
       category: 'Conférence',
-      imageUrl: 'assets/images/directeur.jpeg',
-      featured: false,
-      tags: ['développement durable', 'environnement', 'économie', 'conférence']
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['développement durable', 'innovation', 'ODD', 'coopération']
     },
     {
-      id: '9',
-      title: 'Entretien Avec Dr Rachid El Bouyahaoui',
-      summary: 'Discussion avec Dr Rachid El Bouyahaoui sur les perspectives de la recherche en Mauritanie.',
-      content: `L'ANRSI a rencontré le Dr Rachid El Bouyahaoui, chercheur émérite et ancien directeur de recherche, pour discuter des perspectives de développement de la recherche scientifique en Mauritanie.
+      id: 8,
+      title: 'Workshop sur les Énergies Renouvelables et l\'Efficacité Énergétique',
+      excerpt: 'Workshop sur les énergies renouvelables et l\'efficacité énergétique.',
+      content: `L'ANRSI organise un workshop sur les énergies renouvelables et l'efficacité énergétique du 28 au 30 décembre 2024. Cet événement présente les dernières innovations en matière d'énergie.
 
-**ANRSI :** Dr El Bouyahaoui, comment évaluez-vous l'état actuel de la recherche scientifique en Mauritanie ?
+Les technologies présentées incluent :
+- Énergie solaire et éolienne
+- Systèmes de stockage d'énergie
+- Efficacité énergétique
+- Smart grids et réseaux intelligents
+- Énergies marines renouvelables
 
-**Dr El Bouyahaoui :** La recherche scientifique en Mauritanie connaît une dynamique positive depuis la création de l'ANRSI. Nous assistons à une structuration progressive des activités de recherche et à un renforcement des capacités humaines et matérielles.
-
-**ANRSI :** Quels sont selon vous les domaines prioritaires pour le développement de la recherche ?
-
-**Dr El Bouyahaoui :** Les domaines prioritaires sont clairement identifiés dans la stratégie nationale de recherche et d'innovation : l'agriculture et la sécurité alimentaire, les énergies renouvelables, la santé, et les technologies de l'information. Ces domaines correspondent aux défis majeurs du développement de la Mauritanie.
-
-**ANRSI :** Comment voyez-vous le rôle de l'ANRSI dans cette dynamique ?
-
-**Dr El Bouyahaoui :** L'ANRSI joue un rôle central dans la coordination et le financement de la recherche. L'agence doit continuer à développer des partenariats internationaux et à faciliter l'accès des chercheurs aux financements et aux équipements.
-
-**ANRSI :** Quels conseils donneriez-vous aux jeunes chercheurs mauritaniens ?
-
-**Dr El Bouyahaoui :** Je leur conseille de s'orienter vers des domaines porteurs, de développer leurs compétences en langues étrangères, et de s'impliquer dans des réseaux scientifiques internationaux. La recherche est un métier qui exige passion et persévérance.`,
+Le workshop vise à promouvoir l'adoption d'énergies renouvelables et à améliorer l'efficacité énergétique en Mauritanie.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-01-20'),
-      category: 'Interview',
-      imageUrl: 'assets/images/chef.jpeg',
-      featured: false,
-      tags: ['recherche', 'perspectives', 'développement', 'interview']
+      publishDate: new Date('2024-12-28'),
+      category: 'Workshop',
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['énergie renouvelable', 'efficacité énergétique', 'innovation']
     },
     {
-      id: '10',
-      title: 'Entretien Avec Pr Cheikh Mouhamadou Mbacké Lo',
-      summary: 'Entretien avec le Professeur Cheikh Mouhamadou Mbacké Lo sur l\'innovation et le développement.',
-      content: `Le Professeur Cheikh Mouhamadou Mbacké Lo, spécialiste de l'innovation et du développement, a accordé un entretien exclusif à l'ANRSI sur les enjeux de l'innovation technologique en Mauritanie.
+      id: 9,
+      title: 'Symposium sur l\'Innovation Technologique et le Transfert de Technologie',
+      excerpt: 'Symposium sur l\'innovation technologique et le transfert de technologie.',
+      content: `L'ANRSI organise un symposium sur l'innovation technologique et le transfert de technologie du 20 au 22 décembre 2024. Ce symposium explore les mécanismes de transfert de technologie.
 
-**ANRSI :** Professeur Mbacké Lo, comment définissez-vous l'innovation dans le contexte mauritanien ?
+Les sujets abordés incluent :
+- Mécanismes de transfert de technologie
+- Propriété intellectuelle et innovation
+- Partenariats technologiques
+- Commercialisation de la recherche
+- Politiques d'innovation
 
-**Pr Mbacké Lo :** L'innovation en Mauritanie doit être adaptée aux spécificités locales et aux défis du développement. Il ne s'agit pas seulement d'adopter des technologies étrangères, mais de développer des solutions innovantes qui répondent aux besoins spécifiques du pays.
-
-**ANRSI :** Quels sont les secteurs les plus prometteurs pour l'innovation ?
-
-**Pr Mbacké Lo :** Plusieurs secteurs offrent des opportunités importantes : l'agriculture intelligente avec l'utilisation des technologies numériques, les énergies renouvelables avec le développement de solutions adaptées au climat saharien, et la santé avec l'innovation dans les technologies médicales.
-
-**ANRSI :** Comment l'ANRSI peut-elle favoriser l'innovation ?
-
-**Pr Mbacké Lo :** L'ANRSI doit créer un écosystème favorable à l'innovation en développant des programmes de financement spécifiques, en facilitant les partenariats entre recherche et industrie, et en soutenant l'entrepreneuriat innovant.
-
-**ANRSI :** Quels conseils pour les jeunes innovateurs ?
-
-**Pr Mbacké Lo :** Je leur conseille de s'inspirer des défis locaux pour développer leurs innovations, de collaborer avec les chercheurs et les entreprises, et de ne pas hésiter à tester leurs idées sur le terrain. L'innovation naît souvent de la confrontation avec les problèmes réels.`,
+Le symposium vise à renforcer les capacités de transfert de technologie et à promouvoir l'innovation en Mauritanie.`,
       author: 'ANRSI',
-      publicationDate: new Date('2025-01-15'),
-      category: 'Interview',
-      imageUrl: 'assets/images/france.jpeg',
-      featured: false,
-      tags: ['innovation', 'technologie', 'développement', 'entrepreneuriat']
+      publishDate: new Date('2024-12-20'),
+      category: 'Symposium',
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['innovation', 'transfert de technologie', 'propriété intellectuelle']
+    },
+    {
+      id: 10,
+      title: 'Conférence sur la Recherche Scientifique et l\'Innovation en Mauritanie',
+      excerpt: 'Conférence sur la recherche scientifique et l\'innovation en Mauritanie.',
+      content: `L'ANRSI organise une conférence sur la recherche scientifique et l'innovation en Mauritanie du 15 au 17 décembre 2024. Cette conférence présente les réalisations et défis de la recherche en Mauritanie.
+
+Les thèmes abordés incluent :
+- État de la recherche scientifique en Mauritanie
+- Défis et opportunités de l'innovation
+- Financement de la recherche
+- Coopération internationale en recherche
+- Politiques de recherche et d'innovation
+
+La conférence vise à renforcer le système national de recherche et d'innovation et à promouvoir l'excellence scientifique.`,
+      author: 'ANRSI',
+      publishDate: new Date('2024-12-15'),
+      category: 'Conférence',
+      imageUrl: 'assets/images/article1.jpeg',
+      tags: ['recherche scientifique', 'innovation', 'Mauritanie', 'excellence']
     }
   ];
 
-  constructor() {}
-
-  getArticles(): Observable<Article[]> {
+  getAllArticles(): Observable<Article[]> {
     return of(this.articles).pipe(delay(300));
   }
 
   getFeaturedArticles(): Observable<Article[]> {
-    return of(this.articles.filter(article => article.featured)).pipe(delay(300));
+    // Since we removed the featured property, return first 3 articles as featured
+    return of(this.articles.slice(0, 3)).pipe(delay(300));
   }
 
-  getRecentArticles(count: number = 3): Observable<Article[]> {
+  getRecentArticles(): Observable<Article[]> {
     return of([...this.articles]
-      .sort((a, b) => b.publicationDate.getTime() - a.publicationDate.getTime())
-      .slice(0, count)
+      .sort((a, b) => b.publishDate.getTime() - a.publishDate.getTime())
+      .slice(0, 5)
     ).pipe(delay(300));
   }
 
-  getArticleById(id: string): Observable<Article | undefined> {
+  getArticleById(id: number): Observable<Article | undefined> {
     return of(this.articles.find(article => article.id === id));
   }
 
-  getArticlesByCategory(category: string): Observable<Article[]> {
-    return of(this.articles.filter(article => 
-      article.category.toLowerCase() === category.toLowerCase()
-    )).pipe(delay(300));
+  searchArticles(searchTerm: string): Observable<Article[]> {
+    const filteredArticles = this.articles.filter(article =>
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.excerpt.toLowerCase().includes(searchTerm) ||
+      article.content.toLowerCase().includes(searchTerm) ||
+      article.category.toLowerCase().includes(searchTerm) ||
+      article.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+    );
+    return of(filteredArticles).pipe(delay(300));
   }
 
-  searchArticles(term: string): Observable<Article[]> {
-    const searchTerm = term.toLowerCase();
-    return of(this.articles.filter(article => 
-      article.title.toLowerCase().includes(searchTerm) ||
-      article.summary.toLowerCase().includes(searchTerm) ||
-      article.content.toLowerCase().includes(searchTerm) ||
-      article.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-    )).pipe(delay(300));
+  getArticlesByCategory(category: string): Observable<Article[]> {
+    const filteredArticles = this.articles.filter(article =>
+      article.category.toLowerCase() === category.toLowerCase()
+    );
+    return of(filteredArticles).pipe(delay(300));
   }
 }

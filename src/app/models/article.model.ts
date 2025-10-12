@@ -1,12 +1,11 @@
 export interface Article {
-  id: string;
+  id: number;
   title: string;
-  summary: string;
   content: string;
+  excerpt: string;
   author: string;
-  publicationDate: Date;
-  category: string;
+  publishDate: Date;
   imageUrl: string;
-  featured: boolean;
+  category: string;
   tags: string[];
 }
